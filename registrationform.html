@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Columbia Grocers</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="formdata.js" defer></script>
+</head>
+<body>
+    <h1>Western Columbia Grocers</h1>
+    
+    <form id="myform" onsubmit="processData(); return false">
+        <!-- <div class="container"> -->
+            <h2>Registration Form</h2>
+            <hr>
+        
+                <label for="fullname">Full Name:</label>
+                <input class="top-input" type="text" id="fullname" required>
+            
+        
+                <label for="address">Address:</label>
+                <input class="top-input" type="text" id="address" required>
+            
+        
+                <label for="postalcode">Postal Code:</label>
+                <input class="top-input" type="text" id="postalcode" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" placeholder="A1A 1A1" required>
+            
+        
+                <label for="phone">Telephone Number:</label>
+                <input class="top-input" type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="587-777-1234" required>
+            
+        
+                <label for="email">Email:</label>
+                <input class="top-input" type="email" id="email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+            
+        
+                <label for="pickupdate">Pickup Date:</label>
+                <input class="top-input" type="date" id="pickupdate" required>
+            
+            
+
+                <input class="resetbtn" type="reset" onclick=resetform()>
+                <input class="submitbtn" type="submit">
+        <!-- </div>      -->
+    </form>
+
+    <form id="outputform">
+        <h2>Your Details</h2>
+        <hr>
+        <p id="cxfullname"></p>
+        <p id="cxaddress"></p>
+        <p id="cxpostalcode"></p>
+        <p id="cxphone"></p>
+        <p id="cxemail"></p>
+        <p id="cxpickupdate"></p>
+    </form>
+
+    <div id="foodhampers">
+        <table>
+            <thead>
+                <tr><th>Hamper Name</th><th>Prices</th><th>Select Quantity</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Vegetable Hamper</td><td>20Kg: $30.0</td><td><input id="veg" type="number" min="0" value="0"></td></tr>
+                <tr><td>Fruit Hamper</td><td>10Kg: $20.0</td><td><input id="fruit" type="number" min="0" value="0"></td></tr>
+                <tr><td>Fresh Chickens</td><td>$7.00 per Chicken</td><td><input id="chicken" type="number" min="0" value="0"></td></tr>
+                <tr><td>Pork</td><td>$5/kg</td><td><input id="pork" type="number" min="0" value="0"></td></tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th><button onclick="submitorder()">Submit</button></th>
+                </tr>
+            </tfoot>
+        </table>
+   </div>
+    
+</body>
+</html>
