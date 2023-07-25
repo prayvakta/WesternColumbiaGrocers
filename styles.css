@@ -1,9 +1,9 @@
 * {
-    box-sizing: border-box
+  box-sizing: border-box
 }
 
 body{
-    background-color: rgb(183, 241, 239);
+  background-color: rgb(183, 241, 239);
 }
 
 form{
@@ -15,7 +15,7 @@ form{
 }
 
 /* .container {
-  padding: 16px;
+padding: 16px;
 } */
 
 .top-input, p{
@@ -30,24 +30,24 @@ form{
 /* I want to make the hr same size as the rest of the input and also align it to the left side */
 
 hr {   
-    border: 1px solid #757575;
-    margin-bottom: 25px;
+  border: 1px solid #757575;
+  margin-bottom: 25px;
 }
 
 .resetbtn {
-    background-color: #e23832;
-    color: white;
-    padding: 16px 20px;
-    margin: 20px 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-    opacity: 0.9;
-  }
-  
-  .resetbtn:hover {
-    opacity:1;
-  }
+  background-color: #e23832;
+  color: white;
+  padding: 16px 20px;
+  margin: 20px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.resetbtn:hover {
+  opacity:1;
+}
 
 .submitbtn {
   background-color: #04AA6D;
@@ -66,34 +66,49 @@ hr {
 
 #outputform{
   float: right;
-  display: none;
+  visibility: hidden;
 }
 
-#foodhampers{
+#foodhampers, #receipt{
   border: 3px solid black;
   clear: left;
   text-align: left;
   margin-bottom: 20px;
   padding: 16px;
   width: 50%;
+  visibility: hidden;
 }
 
 #foodhampers > table{
   width: 100%;
 }
 
-#foodhampers tr > th 
-{
-	background: #1b90bb;
-	 color: #ffffff;
-   padding: 5px;
+#foodhampers tr > th {
+ background: #1b90bb;
+ color: #ffffff;
+ padding: 5px;
 }
 
-#foodhampers td{
+#foodhampers td {
   border: 1px solid black;
   padding: 5px;
 }
 
-#foodhampers tfoot{
+#foodhampers tfoot {
   text-align: center;
+}
+
+#receipt > table{
+  width: 100%;
+}
+
+#receipt tr > th {
+  background: #1b90bb;
+  color: #ffffff;
+  padding: 5px;
+ }
+ 
+ #receipt td {
+  /* border: 1px solid black; */
+  padding: 5px;
 }

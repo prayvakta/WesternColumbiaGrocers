@@ -16,7 +16,7 @@
             <hr>
         
                 <label for="fullname">Full Name:</label>
-                <input class="top-input" type="text" id="fullname" required>
+                <input class="top-input" type="text" id="fullname" required autofocus>
             
         
                 <label for="address">Address:</label>
@@ -57,6 +57,8 @@
     </form>
 
     <div id="foodhampers">
+        <h2>Please select your items</h2>
+        <hr>
         <table>
             <thead>
                 <tr><th>Hamper Name</th><th>Prices</th><th>Select Quantity</th></tr>
@@ -69,10 +71,29 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th><button onclick="submitorder()">Submit</button></th>
+                    <th colspan="3"><button onclick="submitorder()">Submit</button></th>
                 </tr>
             </tfoot>
         </table>
+   </div>
+
+   <div id="receipt">
+    <h2>Your Receipt</h2>
+    <hr>
+    <table>
+        <thead>
+            <tr><th>Items</th><th>Quantity</th></tr>
+        </thead>
+        <tbody id="receipt-table">
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total Order:</th>
+                <th id="totalbill"></th>
+            </tr>
+        </tfoot>
+    </table>
    </div>
     
 </body>

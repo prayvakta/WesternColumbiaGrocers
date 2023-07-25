@@ -1,4 +1,3 @@
-
 function processData(){
     let fullname=document.getElementById("fullname").value;
     let address=document.getElementById("address").value;
@@ -19,11 +18,15 @@ function displaydetails(fn, add, pc, ph, email, pickd){
     document.getElementById("cxemail").innerHTML = email;
     document.getElementById("cxpickupdate").innerHTML = ("Date you selected for pickup - " + pickd);
 
-    document.getElementById("outputform").style.display = "initial";
+    document.getElementById("outputform").style.visibility = "visible";
+    document.getElementById("foodhampers").style.visibility = "visible";
+
 }
 
 function resetform() {
-    document.getElementById("outputform").style.display = "none";
+    document.getElementById("outputform").style.visibility = "hidden";
+    document.getElementById("foodhampers").style.visibility = "hidden";
+    document.getElementById("receipt").style.visibility = "hidden";
 }
 
 function submitorder() {
@@ -37,4 +40,30 @@ function submitorder() {
     let chicken = parseFloat(document.getElementById("chicken").value);
     let pork = parseFloat(document.getElementById("pork").value);
 
-}    
+    let total = 0;
+    var output ="";
+    if(veghamper>0){
+        total+=(vegRate*veghamper);
+        output+=("<tr><td>Vegetable Hamper</td><td>"+veghamper+"</td>");
+    }
+    if(fruithamper>0){
+        total+=(fruitRate*fruithamper);
+        output+=("<tr><td>Fruit Hamper</td><td>"+fruithamper+"</td>");
+    }
+    if(chicken>0){
+        total+=(chickenRate*chicken);
+        output+=("<tr><td>Fresh Chickens</td><td>"+chicken+"</td>");
+    }
+    if(pork>0){
+        total+=(porkRate*pork);
+        output+=("<tr><td>Pork</td><td>"+pork+"</td>")
+    }
+
+    if(output){
+        document.getElementById("receipt-table").innerHTML = output;
+    }
+    document.getElementById("totalbill").innerHTML = ("$"+total);
+
+    document.getElementById("receipt").style.visibility = "visible";
+}
+
